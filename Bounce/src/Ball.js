@@ -11,7 +11,8 @@ class Ball {
         this.xAcc = 0;
         this.yAcc = 0;
 
-        this.restitution = -0.9;
+        this.restitution = -0.8;
+        this.friction = 0.9;
 
         this.collidedX = false;
         this.collidedY = false;
@@ -27,6 +28,7 @@ class Ball {
         }
         if(!this.collidedY && (this.yPos <= this.radius || this.yPos >= (800 - this.radius))) {
             this.yVel *= this.restitution;
+            this.xVel *= this.friction;
             this.collidedY = true;
         }
         else {
