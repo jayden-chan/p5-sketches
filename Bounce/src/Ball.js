@@ -55,4 +55,4 @@ class Ball {
         this.xAcc = 0;
         this.yAcc = 0;
     }
-
+}
