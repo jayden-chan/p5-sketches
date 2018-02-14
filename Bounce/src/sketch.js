@@ -1,4 +1,5 @@
-let myBall = new Ball(400, 400, 0, 0);
+let myBall = new Ball(10, 400, 400, 10, -10);
+let gravity = 0.5;
 
 function setup() {
     createCanvas(800, 800);
@@ -7,6 +8,7 @@ function setup() {
 
 function draw() {
     background(51);
+    myBall.applyForce(0, gravity);
     myBall.draw();
     myBall.update();
 }
