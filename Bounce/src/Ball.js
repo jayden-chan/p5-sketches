@@ -16,6 +16,18 @@ class Ball {
 
         this.collidedX = false;
         this.collidedY = false;
+
+        this.lastMouseX = 0;
+        this.lastMouseY = 0;
+
+        this.grabbing = false;
+    }
+
+    dist(a, b, x, y) {
+        let dx = abs(a-x);
+        let dy = abs(b-y);
+
+        return sqrt(dx*dx + dy*dy);
     }
 
     checkWallCollision() {
@@ -34,6 +46,28 @@ class Ball {
         else {
             this.collidedY = false;
         }
+    }
+
+    mouseDrag(pressed, x, y) {
+        if(pressed) {
+            if(this.dist(this.xPos, this.yPos, x, y) < this.radius * 3) {
+                this.grabbing = true;
+            }
+        }
+        else {
+            this.grabbing = false;
+        }
+
+        if(this.grabbing) {
+            this.xPos = x;
+            this.yPos = y;
+
+            this.xVel = x - this.lastMouseX;
+            this.yVel = y - this.lastMouseY;
+        }
+
+        this.lastMouseX = x;
+        this.lastMouseY = y;
     }
 
     applyForce(forceX, forceY) {

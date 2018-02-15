@@ -1,4 +1,4 @@
-let myBall = new Ball(10, 400, 400, 10, -10);
+let myBall = new Ball(17, 400, 400, 0, 0);
 let gravity = 0.5;
 
 function setup() {
@@ -11,4 +11,5 @@ function draw() {
     myBall.applyForce(0, gravity);
     myBall.draw();
     myBall.update();
+    myBall.mouseDrag(mouseIsPressed, mouseX, mouseY);
 }
