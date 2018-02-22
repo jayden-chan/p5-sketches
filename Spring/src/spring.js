@@ -38,7 +38,7 @@ class Spring {
 
     draw() {
         strokeWeight(this.wid);
-        line(this.baseX, this.baseY, this.baseX, this.baseY + this.len - this.pos);
+        line(this.baseX, this.baseY, this.baseX, this.yPos);
         rect(this.baseX-25, this.yPos, 50, 8);
     }
 

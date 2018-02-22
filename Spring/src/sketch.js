@@ -11,7 +11,7 @@ function draw() {
 textSize(10);
 
     background(51);
- 
+
     textSize(32);
     fill(255);
     strokeWeight(0);
