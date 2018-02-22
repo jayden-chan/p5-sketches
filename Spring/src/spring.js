@@ -56,7 +56,7 @@ class Spring {
 
     mouseDrag(pressed, x, y) {
         if(pressed) {
-            if(this.dist(this.baseX, this.yPos, x, y) < 10) {
+            if(this.dist(this.baseX, this.yPos, x, y) < 20) {
                 this.grabbing = true;
             }
         }
